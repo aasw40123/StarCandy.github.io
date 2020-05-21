@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 阿美族服飾 </title>
+    <style>
+        .navbar {
+            width: 1500px;
+            background-color: rgba(139, 59, 59, 0);
+            overflow: auto;
+            margin: auto;
+
+        }
+
+        .navbar a {
+            font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+            float: left;
+            padding: 15px 0px;
+            color: #96182f;
+            text-decoration: none;
+            font-size: 20px;
+            width: 250px;
+            /* Four links of equal widths */
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 175, 189, 0.23);
+            color: #d13451;
+        }
+
+        .navbar a.active {
+            background-color: #D24F67;
+            color: white;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+        }
+
+
+        .sidepanel {
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidepanel a {
+            font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+
+        }
+
+        .sidepanel a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidepanel .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+
+        }
+
+        .openbtn {
+            font-size: 30px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.63);
+            color: #000000;
+            padding: 10px 15px;
+            border: none;
+            display: none;
+        }
+
+        .openbtn:hover {
+            background-color: #d4d4d4;
+        }
+
+        .a1 {
+            display: none;
+        }
+
+		.hh1{text-align: center;
+		font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;color: white;
+		background-color: #D24F67;
+		display: none;}
+		
+        
+
+        .content {
+display: block;
+            float: left;
+            width: 100%;
+            text-align: center;
+            height: 700px;
+
+        }
+		
+		.content2 {
+display: none;
+            float: left;
+            width: 100%;
+            text-align: center;
+            height: 700px;
+
+        }
+		
+
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: url(../imgs/back.PNG) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #CCCCCC;
+        }
+
+		@media only screen and (max-width: 768px) {
+            .openbtn {
+                display: block;
+            }
+
+            .a1 {
+                display: block;
+            }
+			
+			.content{display: none;}
+			.content2{display: block;}
+			.hh1{display: block;}
+			.content2 img{width: 90%;
+			margin: auto;
+			padding: 10px;}
+        }
+
+
+        @media only screen and (min-width:768px) and (max-width:1024px) {
+            .navbar {
+                width: 900px;
+                margin: auto;
+            }
+
+            .navbar a {
+                width: 150px;
+            }
+
+        }
+		
+		
+		#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba(226, 26, 26, 0.72);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: rgb(212, 16, 16);
+	color: rgb(255, 255, 255);
+}
+		
+		
+
+		
+		
+    </style>
+    <style type="text/css">
+        <!--
+        body {
+            overflow-x: hidden;
+        }
+
+        -->
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a class=" ulw" href="../html/index.html">首頁</a>
+        <a class="ulw" href="../html/introduction.html">阿美族介紹</a>
+        <a class="active ulw" href="../html/clothing.html">阿美族服飾</a>
+        <a class="ulw" href="../html/festival.html">阿美族祭典</a>
+        <a class="ulw" href="../html/myth.html">阿美族神話</a>
+        <a class="ulw" href="../html/team.html">製作團隊</a>
+    </div>
+
+    <div class="a1">
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="../html/index.html">首頁</a>
+            <a href="../html/introduction.html">阿美族介紹</a>
+            <a href="../html/clothing.html">阿美族服飾</a>
+            <a href="../html/festival.html">阿美族祭典</a>
+            <a href="../html/myth.html">阿美族神話</a>
+            <a href="../html/team.html">製作團隊</a>
+        </div>
+    </div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+
+  <div class="hh1">  <h1>阿美族服飾</h1></div>
+    
+
+    <div class="content">
+
+        <div> <img src="../imgs/cl-1.png" width="75%" height="80%" style="margin-top: 10px;"></div>
+
+
+    </div>
+    
+    
+    <div class="content2">
+
+        <div> <img src="../imgs/cl-2.png" ></div>
+		
+         <div> <img src="../imgs/cl-3.png" ></div>
+
+
+    </div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidepanel").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+
+    </script>
+
+</body>
+
+</html>

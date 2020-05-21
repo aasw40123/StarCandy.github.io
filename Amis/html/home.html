@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 首頁 </title>
+
+    <link rel="stylesheet" type="text/css" href="animate.css">
+
+
+    <style>
+        #p1 {
+            margin-top: 100px;
+            width: 100%;
+            height: 100%;
+            float: left;
+            text-align: center;
+        }
+
+
+        #p2 {
+            display: none;
+
+            margin-top: 50px;
+            width: 100%;
+            height: 100%;
+            float: left;
+            text-align: center;
+        }
+
+
+
+        #p3 {
+
+            display: none;
+            margin-top: 150px;
+            width: 100%;
+            height: 100%;
+            float: left;
+            text-align: center;
+        }
+
+
+
+        .navbar {
+            width: 1500px;
+            background-color: rgba(139, 59, 59, 0);
+            overflow: auto;
+            margin: auto;
+
+        }
+
+        .navbar a {
+            font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+            float: left;
+            padding: 15px 0px;
+            color: #96182f;
+            text-decoration: none;
+            font-size: 20px;
+            width: 250px;
+            /* Four links of equal widths */
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 175, 189, 0.23);
+            color: #d13451;
+        }
+
+        .navbar a.active {
+            background-color: #D24F67;
+            color: white;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+        }
+
+
+        .sidepanel {
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidepanel a {
+            font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+
+        }
+
+        .sidepanel a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidepanel .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+
+        }
+
+        .openbtn {
+            font-size: 30px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.63);
+            color: #000000;
+            padding: 10px 15px;
+            border: none;
+            display: none;
+        }
+
+        .openbtn:hover {
+            background-color: #d4d4d4;
+        }
+
+        .a1 {
+            display: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .openbtn {
+                display: block;
+            }
+
+            .a1 {
+                display: block;
+            }
+
+            #p1 {
+                display: none;
+            }
+
+            #p2 {
+                display: none;
+            }
+
+            #p3 {
+                display: block;
+            }
+
+
+        }
+
+        @media only screen and (min-width:768px) and (max-width:1024px) {
+            .navbar {
+                width: 900px;
+                margin: auto;
+            }
+
+            .navbar a {
+                width: 150px;
+            }
+
+            #p1 {
+                display: none;
+            }
+
+            #p2 {
+                display: block;
+            }
+
+        }
+
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: url(../imgs/back.png) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #CCCCCC;
+        }
+
+    </style>
+    <style type="text/css">
+        <!--
+        body {
+            overflow-x: hidden;
+        }
+
+        -->
+    </style>
+
+
+
+</head>
+
+<body>
+    <div>
+
+        <div class="navbar">
+            <a class="active ulw" href="../html/home.html">首頁</a>
+            <a class="ulw" href="../html/introduction.html">阿美族介紹</a>
+            <a class="ulw" href="../html/clothing.html">阿美族服飾</a>
+            <a class="ulw" href="../html/festival.html">阿美族祭典</a>
+            <a class="ulw" href="../html/myth.html">阿美族神話</a>
+            <a class="ulw" href="../html/team.html">製作團隊</a>
+        </div>
+
+        <div class="a1">
+            <div id="mySidepanel" class="sidepanel">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="../html/home.html">首頁</a>
+                <a href="../html/introduction.html">阿美族介紹</a>
+                <a href="../html/clothing.html">阿美族服飾</a>
+                <a href="../html/festival.html">阿美族祭典</a>
+                <a href="../html/myth.html">阿美族神話</a>
+                <a href="../html/team.html">製作團隊</a>
+            </div>
+        </div>
+        <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+
+    <div id="p1" class="animation scale-in-center">
+        <img src="../imgs/LOGO.png" width="100%">
+    </div>
+
+    <div id="p2" class="animation scale-in-center">
+        <img src="../imgs/LOGO2.png" width="600px" height="600px">
+    </div>
+
+    <div id="p3" class="animation scale-in-center">
+        <img src="../imgs/LOGO3.png" width="100%">
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidepanel").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+
+    </script>
+
+</body>
+
+</html>

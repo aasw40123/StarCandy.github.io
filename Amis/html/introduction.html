@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> 阿美族介紹 </title>
+	<style>
+		.navbar {
+			width: 1500px;
+			background-color: rgba(139, 59, 59, 0);
+			overflow: auto;
+			margin: auto;
+
+		}
+
+		.navbar {
+			width: 1500px;
+			background-color: rgba(139, 59, 59, 0);
+			overflow: auto;
+			margin: auto;
+
+		}
+
+		.navbar a {
+			font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+			float: left;
+			padding: 15px 0px;
+			color: #96182f;
+			text-decoration: none;
+			font-size: 20px;
+			width: 250px;
+			/* Four links of equal widths */
+			text-align: center;
+		}
+
+		.navbar a:hover {
+			background-color: rgba(255, 175, 189, 0.23);
+			color: #d13451;
+		}
+
+		.navbar a.active {
+			background-color: #D24F67;
+			color: white;
+		}
+
+		@media only screen and (max-width: 768px) {
+			.navbar {
+				display: none;
+			}
+		}
+
+
+		.sidepanel {
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: #111;
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+		}
+
+		.sidepanel a {
+			font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+
+			font-size: 25px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+
+		}
+
+		.sidepanel a:hover {
+			color: #f1f1f1;
+		}
+
+		.sidepanel .closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+
+		}
+
+		.openbtn {
+			font-size: 30px;
+			cursor: pointer;
+			background-color: rgba(255, 255, 255, 0.63);
+			color: #000000;
+			padding: 10px 15px;
+			border: none;
+			display: none;
+		}
+
+		.openbtn:hover {
+			background-color: #d4d4d4;
+		}
+
+		.a1 {
+			display: none;
+		}
+
+		
+
+
+
+		.clear {
+			clear: both
+		}
+
+
+
+
+		
+
+		.hh1{text-align: center;
+		font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;color: white;
+		background-color: #D24F67;
+		display: none;}
+
+
+		body {
+			overflow-x: hidden;
+			overflow-y: auto;
+			background: url(../imgs/back.PNG) no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+			background-color: #CCCCCC;
+		}
+
+		.i1 img {
+			
+			margin: auto;
+			margin-top: 50px;
+			
+			text-align: center;
+			width: 380px;
+		}
+
+		.i1 {float: left;
+			width: 50%;
+			height: 500px;
+			
+			margin: auto;
+			text-align: center;
+			
+		}
+		.i3 {float: left;
+			width: 50%;
+			
+			
+			margin: auto;
+			text-align: center;
+			
+		}
+		
+		
+		.i3 img {
+			
+			margin: auto;
+			margin-top: 50px;
+			
+			text-align: center;
+			width: 100%;
+		}
+		
+		.i2{text-align: center;
+			float: left;
+			width: 50%;
+			max-height:50vw;
+			background-color: rgba(255, 255, 255, 0.97);
+			font-size: 20px;
+			margin-top: 90px;
+			
+			}
+		.b3{border-style:double;
+		border-color:#d13451;
+		border-width: 6px;}
+		
+		.b2{width: 70%;
+		margin: auto;
+		margin-top: 70px;}
+		
+		@media only screen and (min-width:768px) and (max-width:1024px) {
+			.navbar {
+				width: 900px;
+				margin: auto;
+			}
+
+			.navbar a {
+				width: 150px;
+			}
+
+			.content {
+				height: 500px;
+			}
+			
+			.i1 img {
+			
+			margin: auto;
+			margin-top: 50px;
+			
+			text-align: center;
+			width: 300px;
+		}
+
+		.i1 {float: left;
+			width: 50%;
+			height: 500px;
+			
+			margin: auto;
+			text-align: center;
+			
+		}
+		
+		.i2{text-align: center;
+			float: left;
+			width: 50%;
+			max-height:80vw;
+			background-color: rgba(255, 255, 255, 0.97);
+			font-size: 20px;
+			margin-top: 50px;
+			}
+		
+		
+		.b2{width: 100%;
+		margin: auto;
+		margin-top: 70px;}
+
+		}
+		
+		@media only screen and (max-width: 768px) {
+			.openbtn {
+				display: block;
+			}
+
+			.a1 {
+				display: block;
+			}
+			.i1 img {
+			
+			margin: auto;
+			margin-top: 50px;
+			
+			text-align: center;
+			width: 200px;
+		}
+
+		.i1 {float: left;
+			width: 100%;
+			height: 350px;
+			
+			margin: auto;
+			text-align: center;
+			
+		}
+			
+			
+			.i3 img {
+			
+			margin: auto;
+			margin-top: 50px;
+			
+			text-align: center;
+			width: 400px;
+		}
+
+		.i3 {float: left;
+			width: 100%;
+			height: 350px;
+			
+			margin: auto;
+			text-align: center;
+			
+		}
+		
+		.i2{text-align: center;
+			float: left;
+			width: 100%;
+			max-height:100vw;
+			background-color: rgba(255, 255, 255, 0.97);
+			font-size: 20px;
+			margin-top:0px;
+			}
+		
+		
+		.b2,b3{width: 100%;
+		margin: auto;
+		margin-top:0px;}
+			
+			
+			.hh1{display: block;}
+		}
+		
+		p {font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;}
+		
+		h2{font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;}
+	</style>
+	<style type="text/css">
+		<!--
+		body {
+			overflow-x: hidden;
+		}
+		-->
+	</style>
+
+	<style>
+	
+
+		
+
+
+
+		/* Container for flexboxes */
+		.section {
+			width: 50%;
+			margin-top: 50px;
+			display: -webkit-flex;
+			display: flex;
+		}
+
+	
+	#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba(226, 26, 26, 0.72);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: rgb(212, 16, 16);
+	color: rgb(255, 255, 255);
+}
+
+
+
+		
+		
+
+
+
+		
+	</style>
+</head>
+
+<body>
+
+	<div class="navbar">
+		<a class=" ulw" href="../html/index.html">首頁</a>
+		<a class="active ulw" href="../html/introduction.html">阿美族介紹</a>
+		<a class="ulw" href="../html/clothing.html">阿美族服飾</a>
+		<a class="ulw" href="../html/festival.html">阿美族祭典</a>
+		<a class="ulw" href="../html/myth.html">阿美族神話</a>
+		<a class="ulw" href="../html/team.html">製作團隊</a>
+	</div>
+
+	<div class="a1">
+		<div id="mySidepanel" class="sidepanel">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			<a href="../html/index.html">首頁</a>
+			<a href="../html/introduction.html">阿美族介紹</a>
+			<a href="../html/clothing.html">阿美族服飾</a>
+			<a href="../html/festival.html">阿美族祭典</a>
+			<a href="../html/myth.html">阿美族神話</a>
+			<a href="../html/team.html">製作團隊</a>
+		</div>
+	</div>
+	<button class="openbtn" onclick="openNav()">☰</button>
+	
+	<div class="hh1">  <h1>阿美族介紹</h1></div>
+
+
+
+
+<div style="width: 100%">
+	<div class="b1">
+<div class="b2">
+		<div class="i1 "><img src="../imgs/TW.png"></div>
+		
+		<div class="i2"><div class="b3">
+		<h2>分佈</h2>
+			<p>其原鄉主要分布於花東縱谷平原與海岸平原地區，少數分布於屏東縣牡丹、滿州鄉一帶。
+				總人口數約二十萬餘人，是台灣原住民中人數最多的族群。</p>
+
+				<p>阿美族根據地裡分布、傳統習慣及語音差異等因素，分為北部（南勢）阿美、中部（秀姑巒）阿美、海岸阿美、馬蘭阿美、恆春阿美等五個分類群。</p>
+
+			<p>	隨著經濟型態的轉變，長年旅居都會區的阿美族人，也在臺北和高雄等都會區中建立了以阿美族為主體的社區或聚落，如基隆市的奇浩社區和新北市汐止區的山光社區等，在全國各地都有族人的身影。
+			</p></div>
+		</div>
+		<div class="clear"></div>
+	</div></div></div>
+	
+	<div style="width: 100%; height: 170px;"></div>
+	<div style="width: 100%; height: 0px;"><img src="../imgs/L1.png" style="margin: auto;" width="100%"></div>
+	
+	<div style="width: 100%; height: 175px;"></div>
+	<div >
+	
+	<div class="b1" style="margin-bottom: -100px;">
+<div class="b2" style="margin-top: 20px;">
+		<div class="i3 "><img src="../imgs/i3.png"></div>
+		
+		<div class="i2"><div class="b3">
+		<h2>文化</h2>
+			<p>阿美族在傳統上被歸類為母系社會（母系親屬制度），家族事務多以女性為主體並由女性負責，家族產業之繼承以家族長女及其他女性為優先。</p>
+
+				<p>有關部落大小事務則是由部落男子所組成的年齡階級制度（selal）和集會所來負責部落事務的統籌規劃與分工執行；各階級負責各種不同的任務與工作，並且聽從青年之父（mama nu kapah）與長輩們的指導。</p>
+
+			<p>	阿美族女性對於部落事務則沒有議事權，甚至不得於平時進入集會所（Talo'an / Soraratan / 'Adawang / Sefi）。
+			</p></div>
+		</div>
+		
+	</div></div>
+	
+	
+	
+	
+	</div>
+	<div class="clear"></div>
+	<div style="width: 100%; height: 100px;"></div>
+	
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+	
+	
+	
+	
+	<script>
+		function openNav() {
+			document.getElementById("mySidepanel").style.width = "250px";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidepanel").style.width = "0";
+		}
+	</script>
+
+</body></html>

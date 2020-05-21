@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+body {
+  background-color: #333;
+  text-align: center;
+}
+
+.IM{margin-top: 50px;}
+
+.image {
+	border-style:double;
+	border-width:6px;
+border-color: #ffffff;
+  font-family: 'Open Sans', Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 20px 70px;
+  min-width: 200px;
+  max-width: 300px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.image *,
+.image *:before,
+.image *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.image:before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.76);
+  opacity: 0;
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.image img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.image figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  padding: 0 30px;
+}
+
+.image h3 {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+
+.image p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.image .icons {
+  width: 100%;
+}
+
+.image a {
+  margin: 2px;
+  display: inline-block;
+}
+
+.image a i {
+  background-color: #4367e0;
+  border-radius: 5px;
+  color: #ffffff;
+  display: block;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  width: 30px;
+}
+
+.image a i:before {
+  color: #ffffff;
+}
+
+.image a i:hover {
+  background-color: #e24646;
+  cursor: pointer;
+}
+
+.image:hover:before,
+.image.hover:before {
+  opacity: 0.8;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.image:hover figcaption,
+.image.hover figcaption {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  opacity: 1;
+}

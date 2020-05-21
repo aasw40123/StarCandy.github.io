@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> 阿里嘎該 </title>
+	<style>
+		.navbar {
+			width: 1500px;
+			background-color: rgba(139, 59, 59, 0);
+			overflow: auto;
+			margin: auto;
+
+		}
+
+		.navbar a {
+			font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+			float: left;
+			padding: 15px 0px;
+			color: #96182f;
+			text-decoration: none;
+			font-size: 20px;
+			width: 250px;
+			/* Four links of equal widths */
+			text-align: center;
+		}
+
+		.navbar a:hover {
+			background-color: rgba(255, 175, 189, 0.23);
+			color: #d13451;
+		}
+
+		.navbar a.active {
+			background-color: #D24F67;
+			color: white;
+		}
+
+		@media only screen and (max-width: 768px) {
+			.navbar {
+				display: none;
+			}
+		}
+
+
+		.sidepanel {
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: #111;
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+		}
+
+		.sidepanel a {
+			font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+
+			font-size: 25px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+
+		}
+
+		.sidepanel a:hover {
+			color: #f1f1f1;
+		}
+
+		.sidepanel .closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+
+
+		}
+
+		.openbtn {
+			font-size: 30px;
+			cursor: pointer;
+			background-color: rgba(255, 255, 255, 0.63);
+			color: #000000;
+			padding: 10px 15px;
+			border: none;
+			display: none;
+		}
+
+		.openbtn:hover {
+			background-color: #d4d4d4;
+		}
+
+		.a1 {
+			display: none;
+		}
+
+		@media only screen and (max-width: 768px) {
+			.openbtn {
+				display: block;
+			}
+
+			.a1 {
+				display: block;
+			}
+		}
+
+		.a2 {
+			width: 100%;
+		}
+
+
+		@media only screen and (min-width:768px) and (max-width:1024px) {
+			.navbar {
+				width: 900px;
+				margin: auto;
+			}
+
+			.navbar a {
+				width: 150px;
+			}
+
+			.mySlides {
+				width: 100px;
+			}
+
+
+
+
+
+		}
+
+
+		.content {
+			display: block;
+			
+			float: left;
+			width: 100%;
+			height: 100vh;
+			text-align: center;
+
+
+
+			height: 810px;
+
+		}
+	</style>
+	<style>
+		body {
+			font-family: Arial;
+			margin: 0;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+
+		/* Position the image container (needed to position the left and right arrows) */
+		.container {
+			display: block;
+			width: 100%;
+			position: relative;
+			text-align: center;
+			margin-top: 5%;
+
+		}
+
+
+		.container2 {
+			display: block;
+			width: 100%;
+			position: relative;
+			text-align: center;
+			margin-top: 5%;
+
+		}
+
+
+
+		/* Hide the images by default */
+		.mySlides {
+			display: none;
+			width: 70%;
+			position: relative;
+			margin: auto;
+		}
+
+
+
+		.mySlides2 {
+			display: block;
+			width: 70%;
+			position: relative;
+			margin: auto;
+		}
+
+
+
+		/* Add a pointer when hovering over the thumbnail images */
+		.cursor {
+			cursor: pointer;
+		}
+
+		/* Next & previous buttons */
+
+
+		/* Position the "next button" to the right */
+		.next {
+			right: 12%;
+
+		}
+
+		.prev {
+			left: 12%;
+		}
+
+		.prev,
+		.next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 15px;
+			margin-top: 0px;
+			color: white;
+			background-color: rgb(0, 0, 0);
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+
+			user-select: none;
+		}
+
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover,
+		.next:hover {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+
+
+
+		/* Container for image text */
+		.caption-container {
+			text-align: center;
+			background-color: #222;
+			padding: 2px 16px;
+			color: #4b1515;
+		}
+
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		/* Six columns side by side */
+		.column {
+			float: left;
+			width: 16.66%;
+		}
+
+		/* Add a transparency effect for thumnbail images */
+		.demo {
+			opacity: 0.6;
+		}
+
+		.active,
+		.demo:hover {
+			opacity: 1;
+		}
+
+
+
+
+		body {
+			overflow-x: hidden;
+			overflow-y: auto;
+			background: url(../imgs/back.PNG) no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+			background-color: #CCCCCC;
+		}
+
+
+
+
+
+
+
+
+
+		.container2 {
+			position: relative;
+
+			display: none;
+		}
+
+		/* Hide the images by default */
+		.mySlides2 {
+			display: none;
+		}
+
+		/* Add a pointer when hovering over the thumbnail images */
+		.cursor2 {
+			cursor: pointer;
+		}
+
+		/* Next & previous buttons */
+		.prev2,
+		.next2 {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 15px;
+			margin-top: 0px;
+			color: white;
+			background-color: rgb(0, 0, 0);
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+
+			user-select: none;
+		}
+
+		/* Position the "next button" to the right */
+		.next2 {
+			right: 0%;
+
+		}
+
+		.prev2 {
+			left: 0%;
+		}
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev2:hover,
+		.next2:hover {
+			background-color: rgba(0, 0, 0, 0.56);
+		}
+
+		/* Number text (1/3 etc) */
+		.numbertext2 {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+		}
+
+		/* Container for image text */
+		.caption-container {
+			text-align: center;
+			background-color: #222;
+			padding: 2px 16px;
+			color: white;
+		}
+
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		/* Six columns side by side */
+		.column {
+			float: left;
+			width: 16.66%;
+		}
+
+		/* Add a transparency effect for thumnbail images */
+		.demo2 {
+			opacity: 0.6;
+		}
+
+		.active,
+		.demo2:hover {
+			opacity: 1;
+		}
+
+
+
+		@media only screen and (min-width:768px) and (max-width:1024px) {
+
+			.mySlides {
+				display: block;
+				width: 90%;
+				margin-top: 15%;
+			}
+
+
+			.next {
+				right: 2%;
+
+			}
+
+			.prev {
+				left: 2%;
+			}
+
+			.prev,
+			.next {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 10px;
+				margin-top: 0px;
+				color: white;
+				background-color: rgb(0, 0, 0);
+				font-weight: bold;
+				font-size: 18px;
+				transition: 0.6s ease;
+
+				user-select: none;
+			}
+
+
+
+
+
+		}
+
+
+		@media only screen and (max-width:768px) {
+
+			.mySlides2,
+			.container2 {
+				display: block;
+				width: 85%;
+				margin: auto;
+				margin-top: 5%;
+			}
+
+			.container {
+				display: none;
+			}
+
+
+
+
+		}
+	</style>
+
+	<style type="text/css">
+		<!--
+		body {
+			overflow-x: hidden;
+		}
+		-->
+	</style>
+
+</head>
+
+<body>
+	<div class="a2">
+
+		<div class="navbar">
+			<a class=" ulw" href="../html/index.html">首頁</a>
+			<a class="ulw" href="../html/introduction.html">阿美族介紹</a>
+			<a class="ulw" href="../html/clothing.html">阿美族服飾</a>
+			<a class="ulw" href="../html/festival.html">阿美族祭典</a>
+			<a class="active ulw" href="../html/myth.html">阿美族神話</a>
+			<a class="ulw" href="../html/team.html">製作團隊</a>
+		</div>
+	</div>
+
+	<div class="a1">
+		<div id="mySidepanel" class="sidepanel">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			<a href="../html/index.html">首頁</a>
+			<a href="../html/introduction.html">阿美族介紹</a>
+			<a href="../html/clothing.html">阿美族服飾</a>
+			<a href="../html/festival.html">阿美族祭典</a>
+			<a href="../html/myth.html">阿美族神話</a>
+			<a href="../html/team.html">製作團隊</a>
+		</div>
+	</div>
+	<button class="openbtn" onclick="openNav()">☰</button>
+	<div class="content">
+		<div class="container">
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-1.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-2.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-3.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-4.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-5.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-6.png" style="width:100%">
+			</div>
+
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-7.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-8.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-9.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-10.png" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+
+				<img src="../imgs/book/B3-11.png" style="width:100%">
+			</div>
+
+
+			<a class="prev" onclick="plusSlides(-1)">❮</a>
+			<a class="next" onclick="plusSlides(1)">❯</a>
+
+
+		</div>
+		<div class="container2">
+			<div class="mySlides2">
+
+				<img src="../imgs/book/bb3-1.png" style="width:100%">
+			</div>
+
+			<div class="mySlides2">
+
+				<img src="../imgs/book/bb3-2.png" style="width:100%">
+			</div>
+
+			<div class="mySlides2">
+
+				<img src="../imgs/book/bb3-3.png" style="width:100%">
+			</div>
+
+			<div class="mySlides2">
+
+				<img src="../imgs/book/bb3-4.png" style="width:100%">
+			</div>
+
+			<div class="mySlides2">
+
+				<img src="../imgs/book/bb3-5.png" style="width:100%">
+			</div>
+
+			<div class="mySlides2">
+
+				<img src="../imgs/book/bb3-6.png" style="width:100%">
+
+				<div class="mySlides2">
+
+					<img src="../imgs/book/bb3-7.png" style="width:100%">
+				</div>
+
+				<div class="mySlides2">
+
+					<img src="../imgs/book/bb3-8.png" style="width:100%">
+				</div>
+
+				<div class="mySlides2">
+
+					<img src="../imgs/book/bb3-9.png" style="width:100%">
+				</div>
+
+				<div class="mySlides2">
+
+					<img src="../imgs/book/bb3-10.png" style="width:100%">
+				</div>
+
+				<div class="mySlides2">
+
+					<img src="../imgs/book/bb3-11.png" style="width:100%">
+
+
+				</div>
+				<a class="prev2" onclick="plusSlides2(-1)">❮</a>
+				<a class="next2" onclick="plusSlides2(1)">❯</a>
+
+			</div>
+		</div>
+	</div>
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+
+			var dots = document.getElementsByClassName("demo");
+			var captionText = document.getElementById("caption");
+			if (n > slides.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = slides.length
+			}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+			captionText.innerHTML = dots[slideIndex - 1].alt;
+		}
+	</script>
+
+	<script>
+		var slideIndex = 1;
+		showSlides2(slideIndex);
+
+		function plusSlides2(n) {
+			showSlides2(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides2(slideIndex = n);
+		}
+
+		function showSlides2(n) {
+			var i;
+			var slides2 = document.getElementsByClassName("mySlides2");
+			var dots2 = document.getElementsByClassName("dem2");
+			var captionText2 = document.getElementById("caption");
+			if (n > slides2.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = slides2.length
+			}
+			for (i = 0; i < slides2.length; i++) {
+				slides2[i].style.display = "none";
+			}
+			for (i = 0; i < dots2.length; i++) {
+				dots[i].className = dots[i].className.replace(" active2", "");
+			}
+			slides2[slideIndex - 1].style.display = "block";
+			dots2[slideIndex - 1].className += " active";
+			captionText2.innerHTML = dots2[slideIndex - 1].alt;
+		}
+	</script>
+
+	<script>
+		function openNav() {
+			document.getElementById("mySidepanel").style.width = "250px";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidepanel").style.width = "0";
+		}
+	</script>
+
+</body></html>
